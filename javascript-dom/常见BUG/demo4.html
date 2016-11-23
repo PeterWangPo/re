@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <script>
+        var a = new Array();
+        a.name = 'aa';
+        a.age = 12;
+        console.log(a.length);//这里常见错误是认为为2，其实为0
+        console.log(a);//[name:'aa',age:12]
+        var b = [];
+        b.age = 12;
+        b.name ='11';
+        console.log(b.length);//这里常见错误是认为为2，其实为0
+        console.log(b);//[age:12,name:'11']
+        var c = [];
+        c[0] = 12;
+        c['name']='li';
+        console.log(c.length);//1
+        console.log(c);//[12,name;'li']
+    </script>
+</body>
+</html>

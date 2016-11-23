@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    function stack(){
+        this.length = 0;//栈长度
+        this.dataStroe = [];//存储数据
+        this.clear = function(){
+            for(var i = 0; i < this.length; i++){
+                delete this.dataStroe[i];
+            }
+            this.length = 0;
+        }
+        //压入数据
+        this.push = function(ele){
+            this.dataStroe[this.length++] = ele;
+            return this.length;
+        }
+        //弹出数据
+        this.pop = function(){
+            var len = --this.length
+            var popValue = this.dataStroe[len];
+            delete this.dataStroe[len];
+            return popValue;
+        }
+        //返回最上面的一个数据
+        this.peek = function(){
+            return this.dataStroe[this.length-1];
+        }
+    }
+    //利用堆栈实现将一个数字n转换为以b为基数的数字.
+    function getNumber(num,base){
+        var lst = new stack();
+        do{
+
+        }while();
+    }
+</script>
+</body>
+</html>

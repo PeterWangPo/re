@@ -1,0 +1,16 @@
+<!doctype html>
+<html ng-app>
+<head>
+    <script src="angular.js"></script>
+</head>
+<body>
+Your name: <input type="text" ng-model="yourname" placeholder="World">
+<hr>
+Hello {{yourname || 'World'}}!
+<hr>
+<table>
+    <tr><th>row number</th></tr>
+    <tr ng-repeat="i in [0, 1, 2, 3, 4, 5, 6, 7]"><td>{{i}}</td></tr>
+</table>
+</body>
+</html>

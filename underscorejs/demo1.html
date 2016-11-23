@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>改变命名空间</title>
+    <script>
+        var _ = 'aa';
+        console.log(_);
+    </script>
+    <script src="../underscore.js"></script>
+</head>
+<body>
+<script>
+    var u = _.noConflict();
+    console.log(_);
+    console.log(u);
+</script>
+</body>
+</html>

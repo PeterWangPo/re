@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    function f(){return "global";}
+    function t(bool){
+        var result = [];
+        if(bool){
+            function f(){return "local";}
+            result.push(f());
+        }
+        result.push(f());
+        console.log(result);
+    }
+    t(true);//"local","local"
+    t(false);//"local"
+
+    function m(bool){
+        var  g = f , result = [];
+        if(bool){
+            g = function(){return "local";}
+            result.push(g());
+        }
+        result.push(g());
+        console.log(result);
+    }
+    m(true);//"local","local"
+    m(false);//"global"
+</script>
+</body>
+</html>

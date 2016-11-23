@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    function t(){
+        var a = 'aaa';
+        return {
+            get:function(){return a;},
+            set:function(v){a = v;},
+            type:function(){return typeof a;}
+        };
+    }
+    var t = t();
+    console.log(t.get());
+    t.set(123);
+    console.log(t.get());
+    console.log(t.type());
+</script>
+</body>
+</html>

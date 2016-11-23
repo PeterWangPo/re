@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../../jquery-2.1.4.min.js"></script>
+    <script src="../../underscore.js"></script>
+    <script src="../../backbone.js"></script>
+</head>
+<body>
+    <div id="div"></div>
+</body>
+<script>
+    //事件驱动：改变前和改变后的值获取
+    var M = Backbone.Model.extend({
+        defaults : {
+          name : "lili",
+          age : 25
+        }
+    });
+    var mm = new M();
+    mm.on("change:age",function(model,value){
+       $("#div").text("change to" + value);
+        console.log(model.previous("age"));//25
+        console.log(model.previousAttributes());//Object {name: "lili", age: 25}
+    });
+    mm.set("age",22);
+</script>
+</html>

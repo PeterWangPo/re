@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    function t(a){
+        var r = [];
+        for(var i = 0, n = a.length; i < n; i++){
+            r[i] = function(){return a[i]};//r[i]存放的时变量i的引用。最后i的值时5
+        }
+        return r;
+    }
+    var a = t([1,2,3,4,5]);
+    console.log(a[5]);//期望输出5.但实际输出的时undefined
+
+    function m(a){
+        var r = [];
+        for(var i = 0, n = a.length; i < n; i++){
+//            r[i] = (function(){return a[i]})(i);
+            (function(j){
+                var j = i;
+                r[j] = function(){return a[j]};
+            })(i);
+        }
+        return r;
+    }
+    var b = m([11,12,13,14,15]);
+    console.log(b[0]());
+</script>
+</body>
+</html>

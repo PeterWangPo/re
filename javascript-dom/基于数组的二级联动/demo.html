@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <select id = 'p'>
+        <option value="">请选择省会</option>
+    </select>
+    <select id = 'c'>
+        <option value="">请选择城市</option>
+    </select>
+</body>
+<script>
+    window.onload = function(){
+        var arr = [];
+        arr['湖北省'] = ['武汉','孝感','襄樊'];
+        arr['湖南省'] = ['长沙','岳阳','滨州'];
+        var p = document.getElementById('p');
+        for(var tmp in arr){
+            p.add(new Option(tmp,tmp));
+        }
+        var c = document.getElementById('c');
+        p.onchange = function(){
+            c.options.length =1;//每次改变都要清空之前的数据
+            var pV = p.value;
+            if(pV == '') return;
+            for(var tcp in arr[pV]){
+                c.add(new Option(arr[pV][tcp],arr[pV][tcp]));
+            }
+        }
+    }
+</script>
+</html>

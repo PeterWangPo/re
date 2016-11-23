@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../../jquery-2.1.4.min.js"></script>
+    <script src="../../underscore.js"></script>
+    <script src="../../backbone.js"></script>
+</head>
+<body>
+    <div id = "button">
+    <input type="button" id="hidden" value="hidden" />
+    <input type="button" id="visible" value="visible" />
+    </div>
+    <div id="div"><p>this is a test</p></div>
+</body>
+<script>
+    var v = Backbone.View.extend({
+        hidden : function(){
+            console.log(111);
+            $("#div").hide();
+        },
+        visible : function(){
+            console.log(222);
+            $("#div").show();
+        },
+        el : "body",
+        events : {
+            "click #hidden" : "hidden",
+            "click #visible" : "visible"
+        }
+    });
+    var vv = new v();
+</script>
+</html>

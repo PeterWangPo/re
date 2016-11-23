@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<script type="text/javascript" src="../../jquery-2.1.4.min.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <title>全选与反全选</title>
+</head>
+<body>
+<input type="checkbox" id="all">全选
+<hr />
+<input type="checkbox" name="p">1<br />
+<input type="checkbox" name="p">2<br />
+<input type="checkbox" name="p">3<br />
+</body>
+<script>
+//    //方案一，此方案不好
+//    var inp = document.getElementsByTagName('input');
+//    var all = document.getElementById('all');
+//    all.onclick = function(){
+//        for(var i = 1, len = inp.length; i < len ; i++){
+//            inp[i].checked = inp[0].checked;
+//        }
+//    }
+
+//    方案二：通过ByName比较好
+    var all = document.getElementById('all');
+    all.onclick = function(){
+        var inp = document.getElementsByName('p');
+        for(var i = 0, len = inp.length; i < len; i++){
+            inp[i].checked = all.checked;
+        }
+    }
+    //方案三：利用Jquery实现
+//  $(function(){
+//      $("#all").click(function(){
+//          if(this.checked){
+//              $("input[name='p']").prop('checked',this.checked);
+//          }else{
+//              $("input[name='p']").prop('checked',false);
+//          }
+//      });
+//  });
+</script>
+</html>

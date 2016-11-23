@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    var str = 'aa';
+    function t(){
+        alert(str);
+        var str = 'bbb';
+        alert(str);
+    }
+    t();//两次谈出啥？
+
+
+    var y = 'aa';
+    function m(x){
+        if(x){
+            eval("var y = x;")
+        }
+        return y;
+    }
+    console.log(m());
+</script>
+</body>
+</html>

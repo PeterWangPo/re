@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../../jquery-2.1.4.min.js"></script>
+    <script src="../../underscore.js"></script>
+    <script src="../../backbone.js"></script>
+</head>
+<body>
+    <div id="div"></div>
+</body>
+<script>
+    //事件驱动:once绑定事件
+        var M = Backbone.Model.extend({
+        defaults : {
+          name : "lili",
+          age : 25
+        }
+    });
+    var mm = new M();
+    mm.once("change",function(model,value){
+        var oldAge = model.previous("age");
+        var newAge = model.get("age");
+        if(oldAge != newAge){
+            console.log("old age value:" + oldAge + " new age value:" + newAge);
+        }
+        var oldName = model.previous("name");
+        var newName = model.get("name");
+        if(oldName != newName){
+            console.log("old name value:" + oldName + " new name value:" + newName);
+        }
+    });
+    mm.set({"age" : 22 , "name" : "jone"});
+    mm.set({"age" : 22 , "name" : "jone"});
+</script>
+</html>

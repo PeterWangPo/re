@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    //需求：如果成长值不大于5，就显示1，
+    //成长值不大于10，显示2
+    //成长值不大于15，显示3
+    //其他显示4
+    //&&和||例子分析：
+    //js中0,'',null,NaN,undefined,false为布尔值假.
+    console.log(0 || '' || null || NaN || undefined || false);
+    //&&用法：多个表达式，如果第一个为布尔假，那么就返回第一个表达式的值,如果第一个为真，在判断第二个，如果第二个为假，返回第二个的值，如果都为真，就返回最后一个表达式的值
+    console.log(0 && 'js'); //0
+    console.log('aaa' && 'js') //js
+    console.log('a' && undefined && 'js') //undefined
+    console.log('a' && 'bb' && 'js')//js
+    //||高级用法：多个表达式，如果第一个为真，就返回第一个表达式的值，如果第一个为假，在判断第二个，如果第二个为真，就返回第二个值，如果都为假，就返回最后一个表达式的值
+    console.log('a' || false)//a
+    console.log(false || 0 || 'a')//a
+</script>
+</body>
+</html>

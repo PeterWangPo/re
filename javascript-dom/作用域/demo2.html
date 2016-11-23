@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    function f(){return 'a';}
+    function m(x){
+        var r = [];
+        function f(){return 'b';}
+        if(x){
+            r.push(f());
+        }
+        r.push(f());
+        console.log(r);
+    }
+    m(true);
+    m(false);
+
+    function n(x){
+        var r = [];
+        if(x){
+            function f(){return 'b';}
+            r.push(f());
+        }
+        r.push(f());
+        console.log(r);
+    }
+    n(true);
+    n(false);
+</script>
+</body>
+</html>

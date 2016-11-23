@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../../jquery-2.1.4.min.js"></script>
+    <script src="../../underscore.js"></script>
+    <script src="../../backbone.js"></script>
+</head>
+<body>
+    <div id="div"><p>this is a test</p></div>
+</body>
+<script>
+    var m = Backbone.Model.extend({
+        defaults : {
+            name : "'lili'",
+            age : 25
+        },
+        initialize : function(model,value){
+            this.on("invalid",function(model,error){
+                console.log(error);
+            });
+        },
+        validate : function(attrs){
+            if(!_.isString(attrs.name)) return "must string";
+            if(!_.isNumber(attrs.age)) return "must num";
+        }
+    });
+    var mm = new m();
+    mm.set({
+        name : '33',
+        age : '44'
+    },{"validate" : true});
+    console.log(mm.toJSON());
+</script>
+</html>

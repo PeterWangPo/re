@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../../jquery-2.1.4.min.js"></script>
+    <script src="../../underscore.js"></script>
+    <script src="../../backbone.js"></script>
+</head>
+<body>
+    <div id="div"></div>
+</body>
+<script>
+    //模型继承
+    var M = Backbone.Model.extend({
+        abc : function(text){
+            $("#div").text(text);
+        }
+    },{
+        m : function(text){
+            $("#div").text(text);
+        }
+    });
+    var N = M.extend();
+    N.m("abc");
+    var n = new N();
+    n.abc("test");
+</script>
+</html>

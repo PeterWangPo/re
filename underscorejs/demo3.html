@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>生成underscore对象</title>
+    <script src="../underscore.js"></script>
+</head>
+<body>
+<script>
+    var arr = [1,2,3,4];
+    var brr = _.filter(arr,function(n){
+        return (!(n % 2 ==0));
+    })
+    console.log(brr);
+</script>
+</body>
+</html>

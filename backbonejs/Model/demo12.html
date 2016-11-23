@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../../jquery-2.1.4.min.js"></script>
+    <script src="../../underscore.js"></script>
+    <script src="../../backbone.js"></script>
+</head>
+<body>
+    <div id="div"></div>
+</body>
+<script>
+    //事件驱动:trigger触发事件
+    var M = Backbone.Model.extend({
+        defaults : {
+          name : "lili",
+          age : 25
+        }
+    });
+    var mm = new M();
+    var e = Backbone.Model.extend({},Backbone.Events);
+    e.listenTo(mm,"change:age",function(model,value){
+        var old = model.previous("age");
+        var newAge = model.get("age");
+        if(old !=newAge) console.log("old value:" + old + " new value:" + newAge);
+    });
+    e.listenTo(mm,"change:name",function(model,value){
+        var old = model.previous("name");
+        var newName = model.get("name");
+        console.log("old value:" + old + " new value:" + newName);
+    });
+    mm.set({"age":12,"name":"lee"});
+    e.stopListening(mm,"change:age");//移除对mm对象change:age事件的监听
+    mm.set({"age":14,"name":"lii"});
+    e.stopListening(mm);//移除对mm对象所有事件的监听
+    e.stopListening();//移除对所有对象的监听，除了mm对象，也可能有其他对象
+</script>
+</html>

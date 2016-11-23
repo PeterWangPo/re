@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../../jquery-2.1.4.min.js"></script>
+    <script src="../../underscore.js"></script>
+    <script src="../../backbone.js"></script>
+</head>
+<body>
+<div id="div"><p>this is a test</p></div>
+</body>
+<script>
+    var m = Backbone.Model.extend({
+        defaults : {
+            name : "'lili'",
+            age : 25
+        },
+        url : "http://127.0.0.1/test.php"
+    });
+    var mm = new m();
+    mm.set({
+        name : "han",
+        age : 21
+    });
+    mm.save();
+</script>
+</html>

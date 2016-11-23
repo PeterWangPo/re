@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>My page</title>
+</head>
+<body>
+<h1 class="page-title">Hello</h1>
+<ul>
+    <li>one</li>
+    <li>two</li>
+    <li>three</li>
+</ul>
+<footer><p>©2012 myself</p></footer>
+<script>
+//    var data = [1,2,3,4];
+//    data.forEach(function(){
+//        console.log(this);
+//    },this);
+function Casper(){
+    this.name = 'bbb';
+}
+Casper.prototype.each = function each(array, fn) {
+    "use strict";
+    array.forEach(function _forEach(item, i) {
+//        fn.call(this, this, item, i);
+        console.log(this,item,i);
+    },this);
+    return this;
+};
+var links = [
+    'http://google.com/',
+    'http://yahoo.com/',
+    'http://bing.com/'
+];
+    var casper = new Casper();
+    casper.each(links,function(){
+
+    });
+</script>
+</body>
+</html>

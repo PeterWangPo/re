@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../../jquery-2.0.3.js"></script>
+    <script src="./jquery.tmpl.min.js"></script>
+    <script>
+        //这些数据应该都是ajax通过json形式返回
+        $(function(){
+            var data = [{
+                imgsrc : "1.jpg",
+                title : "test1",
+                themes : ["aaa","bbb","ccc"],
+                year : 2015,
+                number : 20,
+                head : "aaa",
+                description : "<p>111111111111111</p>"
+            },{
+                title : "test2",
+                themes : ["111","222"],
+                year : 2015,
+                number : 22，
+                head : "ttt",
+                description : "<p>122<strong>22</strong>2</p>"
+            }];
+            //如果返回的数据里面包含html标签，可以像68处理
+            //使用id为tmpl的模板应用数据data，然后追加到id为main的元素里面
+            $("#tmpl").tmpl(data).appendTo("#main");
+        });
+    </script>
+    <!-- 如果多个模板中有公共的部分，可以向下面这样提取出来作为一个独立的模板，然后在其他模板在引用（35行） -->
+    <script id = "head" type="text/x-jquery-tmpl">
+        <div class ="common">
+            <header><h1>${head}</h1></header>
+        </div>
+    </script>
+    <script id = "tmpl" type="text/x-jquery-tmpl">
+        <div class="comin">
+            {{tmpl "#head"}}
+            {{if imgsrc}}
+                <img src="${imgsrc}" />
+            {{else}}
+                <img src="default.jpg" />
+            {{/if}}
+            <div class="detail">
+                <div class="title">
+                    <h3>${title}</h3>
+                </div>
+                <div class="year">
+                    ${year}
+                </div>
+                <div class="number">
+                    ${number}
+                </div>
+                <div class="number">
+                    ${number}
+                </div>
+                <div class="Themes">
+                    <strong>Themes</strong>
+                    <ul>
+                        {{each themes}}
+                            <li>${value}</li>
+                        {{/each}}
+                    </ul>
+                </div>
+                <div class="description">
+                    {{html description}}
+                </div>
+            </div>
+        </div>
+    </script>
+</head>
+<body>
+    <div id="main"></div>
+</body>
+</html>

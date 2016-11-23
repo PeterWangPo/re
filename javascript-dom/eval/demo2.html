@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    var y = 'aa';
+    function t(x){
+        eval(x);
+        console.log(y);
+    }
+    t("var y = 'bbb'");//bbb
+    t("var z = 'bbb'");//aa
+    //上述代码中eval影响到了外部作用域。用户可以根据参数不同改变t函数。为了防止eval这种现象。一般是这样的。
+
+    function m(x){
+        (function(){eval(x);})(); //把eval放在一个独立的局部环境中。
+        console.log(y);
+    }
+    m("var y = '111';");
+    m("var z = '222';");
+
+    //一般在使用eval时，都不使用直接调用的方式，而是使用间接调用的方式。
+    function n(x){
+        var y = 'zzz';
+        var b = eval;//这种方式是间接调用eval。这样会使eval失去访问局部变量的能力。
+        console.log(b("y"));//所以只能访问全局变量。输出aa
+    }
+    n();
+    //间接调用eval的另外一种方式如下：
+    (1,eval)("console.log(y);");//aa
+    //(0,eval)相当于eval
+</script>
+</body>
+</html>

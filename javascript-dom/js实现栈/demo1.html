@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    function stack(){
+        this.length = 0;//栈长度
+        this.dataStroe = [];//存储数据
+        this.clear = function(){
+            for(var i = 0; i < this.length; i++){
+                delete this.dataStroe[i];
+            }
+            this.length = 0;
+        }
+        //压入数据
+        this.push = function(ele){
+            this.dataStroe[this.length++] = ele;
+            return this.length;
+        }
+        //弹出数据
+        this.pop = function(){
+            var len = --this.length
+            var popValue = this.dataStroe[len];
+            delete this.dataStroe[len];
+            return popValue;
+        }
+        //返回最上面的一个数据
+        this.peek = function(){
+            return this.dataStroe[this.length-1];
+        }
+    }
+    var a = new stack();
+    a.push('a');
+    a.push('b');
+    a.push('c');
+    console.log(a.dataStroe);
+    console.log(a.length);
+    console.log(a.peek());
+    a.pop();
+    console.log(a.dataStroe);
+    console.log(a.length);
+    a.push('11');
+    console.log(a.dataStroe);
+    a.clear();
+    console.log(a.dataStroe);
+    console.log(a.length);
+</script>
+</body>
+</html>

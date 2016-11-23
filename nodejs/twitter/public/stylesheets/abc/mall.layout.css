@@ -1,0 +1,66 @@
+@charset "utf-8";
+/*
+@name: mall layout
+@function: All style
+@author: cdwanchuan@jd.com
+*/
+
+/* -- edit layout main -- */
+body{overflow-x:hidden; *position:relative; background:#fff;}
+.layout-container{position:relative;}
+.layout-main{}
+.layout-area{margin-bottom:10px;}
+.layout-area.no-margin{margin-bottom:0;}
+.layout-area .fn-clear{margin-bottom:10px;}
+.layout{width:990px; overflow:hidden; clear:both; margin:0 auto;}
+.layout-auto{width:100%;}
+.auto-width{width:auto;}
+
+/* -- edit layout subfield-- */
+.layout-one, .layout-two-left, .layout-two-right, .layout-three-left, .layout-three-middle, .layout-three-right{overflow:hidden;}
+.layout-one{}
+.layout-two-left, .layout-three-left, .layout-four-left{float:left;}
+.layout-two-right, .layout-three-middle, .layout-three-right, .layout-four-middle-left, .layout-four-middle-right, .layout-four-right{float:left; margin-left:10px;}
+
+/* -- edit layout subfield width -- */
+.w190{width:190px;}.w323{width:323px;}.w324{width:324px;}.w330{width:330px;}.w390{width:390px;}.w490{width:490px;}.w590{width:590px;}.w650{width:650px;}.w790{width:790px;}.w990{width:990px;}
+.w190, .w323, .w324, .w330, .w390, .w490, .w590, .w650, .w790, .w990{word-break:break-all; word-wrap:break-word; overflow-x:hidden;}
+
+/* -- 20120330 Special add -- */
+.w213{width:213px; margin-right:5px;}.w215{width:215px;}.w240{width:240px;}.w252{width:252px; margin-right:7px;}.w546{width:546px; margin-left:0; margin-right:5px;}.w731{width:731px; margin-left:0;}.w764{width:764px; margin-left:7px;}.w765{width:765px;}
+.w213, .w215, .w240, .w252, .w546, .w731, .w764{word-break:break-all; word-wrap:break-word; overflow-x:hidden;}
+
+/* -- the product`s width for goods recommend -- */
+.qTen, .qNine, .qEight, .qSeven, .qSix, .qFive, .qFour, .qThree, .qTwo, .qOne, .iqTen, .iqNine, .iqEight, .iqSeven, .iqSix, .iqFive, .iqFour, .iqThree, .iqTwo, .iqOne{margin:0 1%!important;}
+
+.qTen{width:8%!important;}.qNine{width:9.1%!important;}.qEight{width:10.5%!important;}.qSeven{width:12.2%!important;}.qSix{width:14.6%!important;}.qFive{width:18%!important;}.qFour{width:23%!important;}.qThree{width:31.3%!important;}.qTwo{width:48%!important;}.qOne{width:98%!important;}
+.iqTen{width:7.85%!important;}.iqNine{width:8.95%!important;}.iqEight{width:10.35%!important;}.iqSeven{width:12.05%!important;}.iqSix{width:14.45%!important;}.iqFive{width:17.85%!important;}.iqFour{width:22.85%!important;}.iqThree{width:31.15%!important;}.iqTwo{width:47.85%!important;}.iqOne{width:97.85%!important;}
+.qTenOne{width:8%!important;}.qNineOne{width:9.1%!important;}.qEightOne{width:10.5%!important;}.qSevenOne{width:12.2%!important;}.qSixOne{width:14.6%!important;}.qFiveOne{width:18%!important;}.qFourOne{width:23%!important;}.qThreeOne{width:31.3%!important;}.qTwoOne{width:48%!important;}.qOneOne{width:98%!important;}
+.iqTenOne{width:7.85%!important;}.iqNineOne{width:8.95%!important;}.iqEightOne{width:10.35%!important;}.iqSevenOne{width:12.05%!important;}.iqSixOne{width:14.45%!important;}.iqFiveOne{width:17.85%!important;}.iqFourOne{width:22.85%!important;}.iqThreeOne{width:31.15%!important;}.iqTwoOne{width:47.85%!important;}.iqOneOne{width:97.85%!important;}
+.qTenOneHalf{width:9%!important;}.qNineOneHalf{width:10.1%!important;}.qEightOneHalf{width:11.5%!important;}.qSevenOneHalf{width:13.2%!important;}.qSixOneHalf{width:15.6%!important;}.qFiveOneHalf{width:19%!important;}.qFourOneHalf{width:24%!important;}.qThreeOneHalf{width:32.3%!important;}.qTwoOneHalf{width:49%!important;}.qOneOneHalf{width:99%!important;}
+.iqTenOneHalf{width:8.85%!important;}.iqNineOneHalf{width:9.95%!important;}.iqEightOneHalf{width:11.35%!important;}.iqSevenOneHalf{width:13.05%!important;}.iqSixOneHalf{width:15.45%!important;}.iqFiveOneHalf{width:18.85%!important;}.iqFourOneHalf{width:23.85%!important;}.iqThreeOneHalf{width:32.15%!important;}.iqTwoOneHalf{width:48.85%!important;}.iqOneOneHalf{width:98.85%!important;}
+
+.mOne{margin-left:1%!important; margin-right:1%!important; padding-left:0!important; padding-right:0!important;}
+.pOne{padding-left:1%!important; padding-right:1%!important; margin-left:0!important; margin-right:0!important;}
+.mOneHalf{margin-left:0.5%!important; margin-right:0.5%!important; padding-left:0!important; padding-right:0!important;}
+.pOneHalf{ padding-left:0.5%!important; padding-right:0.5%!important; margin-left:0!important; margin-right:0!important;}
+
+/* -- 20130819统一羊角符显示-- */
+.jRmb{font-family:verdana;}
+
+/* -- 20140114模板信息-- */
+.d-template-info{background:#fff; height:30px; line-height:30px; font-size:14px; text-align:center; border-top:solid 1px #ddd; zoom:1;}
+.d-template-info .d-template-logo{width:71px; height:17px; background:url(http://img14.360buyimg.com/cms/g15/M02/02/02/rBEhWlLUlmAIAAAAAAACcmzTA28AAH3XwP_-tQAAAKK734.gif); margin-right:10px;}
+.d-template-info .d-author span{margin-left:10px;}
+.d-template-info a, .d-template-info span{display:inline-block; *display:inline; zoom:1; vertical-align:middle;}
+.d-template-info a{color:#333;}
+.d-template-info i{font-style:normal;}
+
+/* -- loading -- */
+.loading span, .loading em{display:inline-block; vertical-align:middle; *display:inline; zoom:1;}
+.loading{padding:20px 0; text-align:center;}
+.loading em{font-style:normal; color:#999; margin-left:5px;}
+.icon_loading{width:30px; height:30px; background:url(i/loading.gif);}
+
+/* -- 20140902初始化table列宽渲染-- */
+table{table-layout:auto!important;}

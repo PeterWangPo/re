@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>生成underscore对象</title>
+    <script src="../underscore.js"></script>
+</head>
+<body>
+<script>
+    var arr = [1,2,3,4];
+    //each函数不返回值，而map返回值
+    _.each(arr,function(n){
+        if(!(n % 2)){
+            return n;
+        }
+    });
+    var brr = _.map(arr,function(n){
+        if(!(n % 2)){
+            return n;
+        }
+    })
+    console.log(brr);
+</script>
+</body>
+</html>

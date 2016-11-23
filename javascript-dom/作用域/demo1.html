@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    //js作用域时函数级作用域而不是块级作用域
+    function t(play,other){
+        var highest = 0;
+        for(var i = 0, n = other.length; i < n; i++){
+            var play = other[i];
+            if(play.score > highest){
+                highest = play.score;
+            }
+        }
+        return play.score > highest;
+    }
+    var play ={"score":20};
+    var other = [{"score":3},{"score":5},{"score":10}];
+    var a = t(play,other);
+    console.log(a);
+
+    //作用域中一个比较特殊的地方。catch捕获到的异常会绑定到一个变量上，而该变量的作用域只在catch语句块中。
+    function m(){
+        var a = 'test', r = [];
+        r.push(a);
+        try{
+            throw 'exception';
+        }catch(a){
+            a = 'hello';
+        }
+        r.push(a);
+        console.log(r);
+    }
+    m();
+</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../jquery-2.1.4.min.js"></script>
+    <script src="../underscore.js"></script>
+    <script src="../backbone.js"></script>
+</head>
+<body>
+    <div id="div"></div>
+</body>
+<script>
+    $(function(){
+       window.Test = Backbone.Model.extend({
+               content : '',
+               title : ''
+       });
+        window.TestList = Backbone.Collection.extend({
+            model : Test
+        });
+        window.TestView = Backbone.View.extend({
+            initialize : function(){
+                $('#div').html(data.models[0].get('content'));
+                $('title').html(data.models[0].get('title'));
+            }
+        });
+        var data = new TestList({
+            content : 'test',
+            title : 'hello Backbonejs'
+        });
+        window.App = new TestView();
+    });
+</script>
+</html>
