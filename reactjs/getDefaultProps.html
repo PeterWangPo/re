@@ -10,8 +10,19 @@
 <body>
 <div id="example"></div>
 <script type="text/babel">
+    var Example = React.createClass({
+        /***可以通过该函数设置默认的属性***/
+        getDefaultProps : function(){
+            return {
+                name : 'li'
+            };
+        },
+        render : function(){
+            return (<h1>{this.props.name}</h1>);
+        }
+    });
     ReactDOM.render(
-        <h1>Hello, world!</h1>,
+        <Example />,
         document.getElementById('example')
     );
 </script>

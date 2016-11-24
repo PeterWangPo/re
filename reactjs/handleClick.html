@@ -10,8 +10,16 @@
 <body>
 <div id="example"></div>
 <script type="text/babel">
+    var Example = React.createClass({
+        handleClick : function(){
+            alert(1111);
+        },
+        render : function(){
+            return (<input type="button" onClick={this.handleClick} />); /*****返回的html只能有一个顶级，并且单标签必须使用/进行结束，否则报错******/
+        }
+    });
     ReactDOM.render(
-        <h1>Hello, world!</h1>,
+        <Example />,
         document.getElementById('example')
     );
 </script>

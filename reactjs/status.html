@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Hello React!</title>
+    <script src="build/react.js"></script>
+    <script src="build/react-dom.js"></script>
+    <script src="build/browser.min.js"></script>
+</head>
+<body>
+<div id="example"></div>
+<script type="text/babel">
+    var Example = React.createClass({
+        /**这个函数可以设置初始化一些属性，**/
+        /**由于 this.props 和 this.state 都用于描述组件的特性，可能会产生混淆。
+         * 一个简单的区分方法是，this.props 表示那些一旦定义，就不再改变的特性，而 this.state 是会随着用户互动而产生变化的特性**/
+        getInitialState : function(){
+            return {like : 'bbb'};
+        },
+        doClick : function(){
+            /**setState()方法参数必须是一个类似JSON的对象**/
+            this.state.like == 'aaa' ? this.setState({like : 'bbb'}) : this.setState({like : 'aaa'});
+        },
+        render : function(){
+            return (
+                <div>
+                    <input type="button" value={this.state.like} onClick={this.doClick} />
+                </div>
+            );
+        }
+    });
+    ReactDOM.render(
+        <Example />,
+        document.getElementById('example')
+    );
+</script>
+</body>
+</html>

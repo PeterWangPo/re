@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Hello React!</title>
+    <script src="build/react.js"></script>
+    <script src="build/react-dom.js"></script>
+    <script src="build/browser.min.js"></script>
+</head>
+<body>
+<div id="example"></div>
+<script type="text/babel">
+    /**组件的属性可以接受任意值，字符串、对象、函数等等都可以。有时，我们需要一种机制，验证别人使用组件时，提供的参数是否符合要求**/
+    /**组件类的PropTypes属性，就是用来验证组件实例的属性是否符合要求**/
+    /**如果属性是数组，对其可像demo1也可像demo2那样循环**/
+    var Example = React.createClass({
+//        demo 1
+//        render : function(){
+//            var options = [];
+//            for(var i in this.props.item){
+//                options.push(<li>{i}</li>);
+//            }
+//            return (<ul><li><h1>{this.props.name}</h1></li>{options}</ul>);
+//        },
+//      demo 2
+        render : function(){
+            return (
+                <ul>
+                    <li><h1>{this.props.name}</h1></li>
+                        {
+                            this.props.item.map(function(i) {
+                                return <li>{i}</li>;
+                            })
+                        }
+                </ul>
+            );
+        },
+        propTypes:{
+            name: React.PropTypes.string.isRequired,
+            item: React.PropTypes.array
+        }
+    });
+    ReactDOM.render(
+        <Example name="li" item={[1,2,3]} />,
+        document.getElementById('example')
+    );
+</script>
+</body>
+</html>

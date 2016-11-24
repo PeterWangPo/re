@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Hello React!</title>
+    <script src="build/react.js"></script>
+    <script src="build/react-dom.js"></script>
+    <script src="build/browser.min.js"></script>
+</head>
+<body>
+<div id="example"></div>
+<script type="text/babel">
+    var Example = React.createClass({
+        getInitialState : function(){
+            return {opacity : 1.0};
+        },
+        /**组件将要挂载到DOM上**/
+        componentWillMount : function(){
+            console.log(111);
+        },
+        /**组件已经挂载到DOM上**/
+        componentDidMount : function(){
+            this.timer = setInterval(function(){
+                var opacity = this.state.opacity;
+                if(opacity < 0.1){
+                    this.setState({opacity:1.0});
+                }else{
+                    opacity -=0.1;
+                    this.setState({opacity:opacity});
+                }
+            }.bind(this), 100);
+        },
+        /**组件更新，DOM将要被重新渲染**/
+        componentWillUpdate : function(){
+            console.log(2222);
+        },
+        /**组件已经被更新，DOM已经重新渲染**/
+        componentDidUpdate : function(){
+            console.log(333);
+        },
+        /**组件将被卸载，移除DOM**/
+        componentWillUnmount : function(){
+            console.log(444);
+        },
+        /**行内样式要这样写{{}}，第一重大括号表示这是 JavaScript 语法，第二重大括号表示样式对象**/
+        render : function(){
+            return (
+                    <div style={{opacity:this.state.opacity}}><h1>hello {this.props.name}</h1></div>
+            );
+        }
+    });
+    ReactDOM.render(
+        <Example name="li" />,
+        document.getElementById('example')
+    );
+</script>
+</body>
+</html>

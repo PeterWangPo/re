@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Hello React!</title>
+    <script src="build/react.js"></script>
+    <script src="build/react-dom.js"></script>
+    <script src="build/browser.min.js"></script>
+</head>
+<body>
+<div id="example"></div>
+<script type="text/babel">
+    /*文本输入框的值，不能用 this.props.value 读取，而要定义一个 onChange 事件的回调函数，
+    通过 event.target.value 读取用户输入的值。textarea 元素、select元素、radio元素都属于这种情况*/
+    var Example = React.createClass({
+        render : function(){
+            var value = this.state.value;
+            return (
+                <div>
+                    <input type="text" value={value} onChange={this.handleChange} />
+                    <p>{value}</p>
+                </div>
+            );
+        },
+        getInitialState : function(){
+            return {value : 'hello'};
+        },
+        handleChange : function(){
+            var value = event.target.value;
+            this.setState({value:value});
+        }
+    });
+    ReactDOM.render(
+        <Example />,
+        document.getElementById('example')
+    );
+</script>
+</body>
+</html>

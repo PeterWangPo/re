@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Hello React!</title>
+    <script src="build/react.js"></script>
+    <script src="build/react-dom.js"></script>
+    <script src="build/browser.min.js"></script>
+</head>
+<body>
+<div id="example"></div>
+<div id="example2"></div>
+<script type="text/babel">
+    var names = ['li','peter','dav'];
+    var nameLi = [<li>li</li>,<li>peter</li>,<li>dav</li>]
+    /**JSX 的基本语法规则：遇到 HTML 标签（以 < 开头），就用 HTML 规则解析；遇到代码块（以 { 开头），就用 JavaScript 规则解析**/
+    ReactDOM.render(
+        <ul>
+            {
+                names.map(function(name){
+                    return <li>{name}</li>
+                })
+            }
+        </ul>,
+        document.getElementById('example')
+    );
+    /***可以这样直接把dom放变量里面作为一个数组，然后react会自动遍历循环输出.nameLi里面不能加引号，加引号会把它当做字符串，而不会按照html规则解析**/
+    ReactDOM.render(
+        <ul>
+            {nameLi}
+        </ul>,
+        document.getElementById('example2')
+    );
+</script>
+</body>
+</html>

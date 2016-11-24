@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Hello React!</title>
+    <script src="build/react.js"></script>
+    <script src="build/react-dom.js"></script>
+    <script src="build/browser.min.js"></script>
+    <script src="build/jquery.js"></script>
+</head>
+<body>
+<div id="example"></div>
+<script type="text/babel">
+    var Example = React.createClass({
+        getInitialState : function(){
+            return {
+                name : ''
+            };
+        },
+        componentDidMount : function(){
+            $.get(this.props.url, function(res){
+                var data = JSON.parse(res);
+                if(data.status && this.isMounted()){
+                   this.setState({name:data.name});
+                }else{
+
+                }
+            }.bind(this));
+        },
+        render : function(){
+            return (
+                <div>{this.state.name}</div>
+            );
+        }
+    });
+    ReactDOM.render(
+        <Example url="http://test.com/b.php" />,
+        document.getElementById('example')
+    );
+</script>
+</body>
+</html>
