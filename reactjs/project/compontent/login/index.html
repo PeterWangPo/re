@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>全渠道营销平台</title>
+    <link rel="stylesheet" href="../../../public/css/gx_base.css"/>
+    <link rel="stylesheet" href="../../../public/css/common.css"/>
+    <link rel="stylesheet" href="../../../public/css/use.css"/>
+    <link rel="stylesheet" href="../../../public/css/cation.css">
+    <script src="build/react.js"></script>
+    <script src="build/react-dom.js"></script>
+    <script src="build/browser.min.js"></script>
+</head>
+<body class="login_contain">
+<div class="loginHead">
+    <div class="loginMain">
+        <img src="__PUB_ADM_IMG__/logo1.png">
+    </div>
+</div>
+<div class="loginMain">
+    <div class="loginMainl fl"><img src="__PUB_ADM_IMG__/content.png"></div>
+    <div class="loginMainr fr">
+        <ul>
+            <li class="loginf Bd">全渠道营销平台</li>
+            <!-- <li class="loginf Bd">移联建站系统</li> -->
+            <input class="loginTxt" type="hidden" name="sk" value="{$sk}">
+            <li><input class="loginTxt" type="text" placeholder="请输入登录账号" name="username" value="{$username}"><b class="Usename"></b></li>
+            <li><input class="loginTxt" type="password" placeholder="请输入密码" name="password" value="{$password}"><b class="UsePassword"></b></li>
+            <li class="m_t14" style="font-size:12px;"><input class="loginCh fl" type="checkbox" name="keep" <if condition="$keep">checked="checked" </if> />　记住密码</li>
+            <li><input class="loginBtn" type="button" value="登录" /></li>
+        </ul>
+    </div>
+</div>
+<div class="clearfix"></div>
+<div class="loginFoot">
+    <p>版权所有 京ICP备10022703号</p>
+</div>
+<!--<include file="Public:replace" />-->
+</body>
+</html>

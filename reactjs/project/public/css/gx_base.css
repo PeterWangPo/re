@@ -1,0 +1,106 @@
+@charset "UTF-8";
+/*
+*@Auther wang-liang
+*@data 2016-1-06
+*@description 移联css框架
+*后续添加修改，需写姓名、日期、功用等注释
+*例
+*================================wang liang,2016-01-06,初始化================================*/
+/*================================初始化================================*/
+html{color:#333; overflow-y:auto; -webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}
+html *{outline:0;-webkit-text-size-adjust:none;-webkit-tap-highlight-color:transparent;margin: 0;padding: 0;border: 0}
+body,html{font-family:"Microsoft YaHei";min-width: 1024px;background: #fff}
+table{border-collapse:collapse;border-spacing:0}
+fieldset,img{border:0}
+abbr,acronym{border:0;font-variant:normal}
+del{text-decoration:line-through}
+address,caption,cite,code,dfn,em,i,th,var,b,strong{font-style:normal;font-weight:500;font-family:"Microsoft YaHei";}
+ol,ul{list-style:none;font-family:"Microsoft YaHei";}
+caption,th{text-align:left;font-family:"Microsoft YaHei";}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:500;font-weight: normal;font-family:"Microsoft YaHei";}
+q:after,q:before{content:''}
+sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}
+sup{top:-.5em}
+sub{bottom:-.25em}
+input, textarea{outline:0; resize:none}
+a:link {text-decoration: none;}
+a:visited {text-decoration: none;}
+a:active {text-decoration: none;}
+a:hover {text-decoration: none;}
+/*================================浮动================================*/
+.fl { float:left!important}
+.fr { float:right!important}
+/*================================文字对齐================================*/
+.tl { text-align:left!important}
+.tc { text-align:center}
+.tr { text-align:right}
+/*================================清除浮动================================*/
+.clearfix { zoom:1}
+.clearfix:after { content:''; clear:both; display:block; height:0; visibility:hidden}
+.clear { height:0; overflow:hidden; clear:both}
+/*================================公共边距================================*/
+/*----外边距----*/
+.m_t10 { margin-top:10px!important}
+.m_r10 { margin-right:10px!important}
+.m_b10 { margin-bottom:10px!important}
+.m_l10 { margin-left:10px!important}
+.m_t20 { margin-top:20px!important}
+.m_t25 { margin-top:25px!important}
+.m_t30 { margin-top:25px!important}
+.m_t14 { margin-top:14px!important}
+.m_r20 { margin-right:20px!important}
+.m_r30 { margin-right:30px!important}
+.m_b20 { margin-bottom:20px!important}
+.m_l20 { margin-left:20px!important}
+/*----内边距----*/
+.p_l_r12{ padding-left:12px!important; padding-right:12px!important}
+.p_t_b10{ padding-top:10px!important; padding-bottom:10px!important}
+.p_t_b18{ padding-top:18px!important; padding-bottom:18px!important}
+/*----清除边框----*/
+.b_n{ border:0!important}
+.b_t_n{ border-top:0!important}
+.b_r_n{ border-right:0!important}
+.b_b_n{ border-bottom:0!important}
+.b_l_n{ border-left:0!important}
+.b_t_b_n{ border-top:0!important;border-bottom:0!important}
+.b_l_r_n{ border-left:0!important;border-right:0!important}
+/*----隐藏----*/
+.disP{display: none}
+.line{background: #d9d9d9;width: 100%;height: 1px}
+/*----字体----*/
+.Bd{font-weight:bold;}
+.red{color: #f00;}
+/*点击图片左侧隐藏*/
+.TelescopicDiv{
+	position: absolute;
+	width: 16px;
+	height: 100%;
+	top: 60px;
+    left: 139px;
+}
+.TelescopicDiv span{
+	display: block;
+	width: 16px;
+	height: 16px;
+	background: url(/Public/Common/img/PcWebsiteImg/ClickIcon.png) no-repeat;
+	background-size: 100%;
+	cursor: pointer;
+}
+.TelescopicDiv.hover{
+	background: #dad9d9;
+}
+.TelescopicDiv.hover span{
+	background: url(/Public/Common/img/PcWebsiteImg/ClickIcon1.png) no-repeat;
+	background-size: 100%;
+}
+.LeftDiv{
+	width: 152px;
+	position: relative;
+	float: left;
+}
+.LeftDiv.hover{
+	display: none;
+}
+.RightDiv{
+	overflow-y: auto
+}

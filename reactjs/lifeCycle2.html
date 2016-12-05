@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Hello React!</title>
+    <script src="build/react.js"></script>
+    <script src="build/react-dom.js"></script>
+    <script src="build/browser.min.js"></script>
+</head>
+<body>
+<div id="example"></div>
+<script type="text/babel">
+    <!--组件生命周期大致分为：实例化，活跃期，销毁期-->
+    //实例化：一个组件首次被调用的时候，这些方法会被依次调用：
+    //getDefaultProps,getInitialState,componentWillMount,render,componentDidMount
+    //该组件后续再次被使用，这些方法被依次调用：
+    //getInitialState,componentWillMount,render,componentDidMount
+
+    //活跃期：应用状态改变，组件受到影响，下面方法依次被调用：
+    //componentWillReceiveProps,shouldComponentUpdate,componentWillUpdate,render,componentDidUpdate
+
+    //销毁期：组件使用完后，就会调用下面的方法：
+    //componentWillUnmount
+</script>
+</body>
+</html>

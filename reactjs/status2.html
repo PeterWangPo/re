@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Hello React!</title>
+    <script src="build/react.js"></script>
+    <script src="build/react-dom.js"></script>
+    <script src="build/browser.min.js"></script>
+</head>
+<body>
+<div id="example"></div>
+<script type="text/babel">
+    var Example = React.createClass({
+        getInitialState : function(){
+            return {
+                showOptions : false,
+                name : 'li'
+            };
+        },
+        handleClick : function(){
+
+            if(!this.state.showOptions){
+                /**通过setState函数来修改组件状态值,这里只是修改showOptions的值，而name的值还是初始化的li。如果用this.replaceState({showOptions:true})那么就会修改showOptions的值，并删除name状态
+                 * 很少用replaceState函数改变组件状态
+                 * 不用直接修改组件状态，例如：this.state.showOptions = true;因为这样无法通知React重新渲染组件**/
+                this.setState({showOptions : true});
+            }else{
+                this.setState({showOptions: false});
+            }
+        },
+        render : function(){
+            var options;
+            if(this.state.showOptions){
+                options = <ul><li>lili</li><li>peter</li></ul>;
+            }
+            return (
+                <div>
+                    <input type="checkBox" value="show select" onClick={this.handleClick} />
+                    {options}
+                </div>
+            );
+        }
+    });
+    ReactDOM.render(
+        <Example />,
+        document.getElementById('example')
+    );
+</script>
+</body>
+</html>

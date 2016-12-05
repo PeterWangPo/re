@@ -12,6 +12,7 @@
 <script type="text/babel">
     var Example = React.createClass({
         /***可以通过该函数设置默认的属性***/
+        /**getDefaultProps是在React.createClass调用的时候被调用的，不是组件实例化的时候调用的，所以这里面的数据不能使用实例化数据。可以理解为这里面的数据都是死的。类似于常量**/
         getDefaultProps : function(){
             return {
                 name : 'li'
