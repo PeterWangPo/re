@@ -58,6 +58,46 @@
         return pattern.test(str);
     };
 
+    /****
+     * 只能输入中文，数字，字母,一个中文算2个字符
+     * @that 需要验证的输入框dom
+     * @num 限制字符的个数
+     * @return bool
+     * ***/
+    utils.LengthLimit = function(that,num){
+        var value = $(that).val();
+        if(value){
+            var pattern = /^[a-zA-z0-9\u4e00-\u9fa5]{1,}$/g;
+            if(!value.match(pattern)){
+                alert('只能输入数字字母汉字');
+                $(that).val('');
+                return false;
+            }
+            var _length = 0;
+            var zh_pattern = /[\u4e00-\u9fa5]{1,}/g;
+            var result = value.match(zh_pattern);
+            if(result){
+                var len = result.length;
+                for(var i = 0; i < len; i++){
+                    _length += 2*(result[i].length);
+                }
+            }
+            var ch_pattern = /[a-zA-Z0-9]{1,}/g;
+            var ch_result = value.match(ch_pattern);
+            if(ch_result){
+                var ch_len = ch_result.length;
+                for(var m = 0; m< ch_len ; m++){
+                    _length += ch_result[m].length;
+                }
+            }
+            if(_length > 2*num){
+                alert('最多只能输入'+num+'个汉字');
+                $(that).val('');
+                return false;
+            }
+        }
+    };
+
     /******
      * 过来boom头，如果返回的字符里面有boom头，可过滤掉
      * @params str 需要过滤的字符串
