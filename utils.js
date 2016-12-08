@@ -285,4 +285,11 @@
         }
         return "#" + hex(rgb[1]) + hex(rgb[2]) + hex(rgb[3]);
     };
+
+    /**
+     * 无冲突方法
+     * **/
+    utils.noConflict = function(){
+        root.utils = previousUtils;
+    }
 }.call(this));
