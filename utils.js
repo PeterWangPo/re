@@ -330,7 +330,7 @@
         var _n = this.isNumeric(n) ? n : 0;
         var _separator = separator || '-';
         var _isShowHour = isShowHour || false;
-        now.setMonth(now.getMonth()+ n);
+        now.setMonth(now.getMonth()+ _n);
         var year = now.getFullYear();
         var month = now.getMonth() + 1;
         var day = now.getDate();
