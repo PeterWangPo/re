@@ -303,11 +303,9 @@
     utils.dateToNday = function(n,separator,isShowHour){
         var now = new Date();
         var _n = this.isNumeric(n) ? n : 0;
-        console.log(_n);
         var _separator = separator || '-';
         var _isShowHour = isShowHour || false;
         var newDate = new Date(now.getTime()-24*(_n)*3600*1000);
-        console.log(newDate);
         var year = newDate.getFullYear();
         var month = newDate.getMonth() + 1;
         var day = newDate.getDate();
