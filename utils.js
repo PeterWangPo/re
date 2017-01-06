@@ -319,5 +319,30 @@
             return res;
         }
     };
+
+    /**当前时间几个月前/后时间
+     * @params n num n>0表示当前天前n个月，n<0表示当前天后n个月
+     * @params separator string 年月日分隔符
+     * @params isShowHour bool 是否显示时分秒
+     * **/
+    utils.dateToNmonth = function(n,separator,isShowHour){
+        var now = new Date();
+        var _n = this.isNumeric(n) ? n : 0;
+        var _separator = separator || '-';
+        var _isShowHour = isShowHour || false;
+        now.setMonth(now.getMonth()+ n);
+        var year = now.getFullYear();
+        var month = now.getMonth() + 1;
+        var day = now.getDate();
+        var hour = now.getHours();
+        var mins = now.getMinutes();
+        var sec = now.getSeconds();
+        var res = year + _separator + month + _separator + day;
+        if(_isShowHour){
+            return res +' ' + hour + ':' + mins + ':' + sec;
+        }else{
+            return res;
+        }
+    };
     /**********日期类相关函数 end***********/
 }.call(this));
