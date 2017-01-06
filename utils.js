@@ -291,5 +291,35 @@
      * **/
     utils.noConflict = function(){
         root.utils = previousUtils;
-    }
+    };
+
+    /**********日期类相关函数 start***********/
+    /**当前时间前几天或者后几天
+     * @params n num n>0表示当前天前几天，n<0表示当前天后几天
+     * @params separator string 年月日分隔符
+     * @params isShowHour bool 是否显示时分秒
+     * @return date
+     * **/
+    utils.dateToNday = function(n,separator,isShowHour){
+        var now = new Date();
+        var _n = this.isNumeric(n) ? n : 0;
+        console.log(_n);
+        var _separator = separator || '-';
+        var _isShowHour = isShowHour || false;
+        var newDate = new Date(now.getTime()-24*(_n)*3600*1000);
+        console.log(newDate);
+        var year = newDate.getFullYear();
+        var month = newDate.getMonth() + 1;
+        var day = newDate.getDate();
+        var hour = newDate.getHours();
+        var mins = newDate.getMinutes();
+        var sec = newDate.getSeconds();
+        var res = year + _separator + month + _separator + day;
+        if(_isShowHour){
+            return res +' ' + hour + ':' + mins + ':' + sec;
+        }else{
+            return res;
+        }
+    };
+    /**********日期类相关函数 end***********/
 }.call(this));
